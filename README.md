@@ -88,3 +88,7 @@ OpenChat will call `GET /bot_definition` to verify your endpoint is reachable be
 ### 6. Install the bot as a direct chat.
 
 Search for the bot you registered as if searching for a user. Install the bot as a direct chat (which involves accepting the required permissions). Start talking to the bot! Congratulations, you are now talking to OpenClaw directly from OpenChat.
+
+## Current limitations
+
+At the moment this plugin uses a `/prompt` command and can only interact with OpenChat using the command's jwt. This means that we can only current do request -> response interactions and not autonomous interactions e.g. Heartbeat. I will be giving some thought to how that autonomous interaction scenario can be best supported.
