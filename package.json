@@ -1,0 +1,27 @@
+{
+    "name": "@open-ic/openchat_openclaw",
+    "version": "0.1.1",
+    "description": "OpenClaw OpenChat channel plugin",
+    "type": "module",
+    "scripts": {
+        "generate-key": "tsx scripts/generate-key.ts"
+    },
+    "bin": {
+        "generate-key": "./scripts/generate-key.ts"
+    },
+    "dependencies": {
+        "@open-ic/openchat-botclient-ts": "^1.0.64",
+        "tsx": "latest"
+    },
+    "devDependencies": {
+        "openclaw": "latest"
+    },
+    "openclaw": {
+        "extensions": [
+            "./index.ts"
+        ]
+    },
+    "publishConfig": {
+        "access": "public"
+    }
+}
