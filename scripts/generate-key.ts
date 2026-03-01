@@ -20,7 +20,7 @@ import { BotClientFactory } from "@open-ic/openchat-botclient-ts";
 // Generate a secp256k1 key in traditional EC format (BEGIN EC PRIVATE KEY),
 // which is what the @dfinity/identity-secp256k1 SDK expects.
 const pem = execSync(
-  "openssl ecparam -name secp256k1 -genkey -noout | openssl ec -outform PEM 2>/dev/null",
+  "openssl ecparam -name secp256k1 -param_enc named_curve -genkey -noout | openssl ec -outform PEM 2>/dev/null",
 )
   .toString()
   .trim();

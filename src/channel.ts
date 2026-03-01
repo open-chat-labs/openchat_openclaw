@@ -1,4 +1,5 @@
 import { readFileSync } from "node:fs";
+import { homedir } from "node:os";
 import { type ChannelPlugin, DEFAULT_ACCOUNT_ID } from "openclaw/plugin-sdk";
 import { openChatOnboardingAdapter } from "./onboarding.js";
 
@@ -16,7 +17,8 @@ export function resolvePrivateKey(config: OpenChatAccountConfig): string | undef
   }
   if (config.privateKeyFile) {
     try {
-      return readFileSync(config.privateKeyFile, "utf8").trim();
+      const resolvedPath = config.privateKeyFile.replace(/^~/, homedir());
+      return readFileSync(resolvedPath, "utf8").trim();
     } catch (err) {
       throw new Error(
         `[openchat] Could not read privateKeyFile "${config.privateKeyFile}": ${String(err)}`,

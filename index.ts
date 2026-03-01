@@ -40,6 +40,16 @@ const plugin = {
       req: import("node:http").IncomingMessage,
       res: import("node:http").ServerResponse,
     ) => {
+      res.setHeader("Access-Control-Allow-Origin", "*");
+      res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
+      res.setHeader("Access-Control-Allow-Headers", "Content-Type, x-oc-jwt");
+
+      if (req.method === "OPTIONS") {
+        res.statusCode = 204;
+        res.end();
+        return;
+      }
+
       // Use the first active account (single-account use case).
       // For multi-account support, the JWT scope could be used to pick the right one.
       const entry = activeAccounts.values().next().value;
