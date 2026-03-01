@@ -1,0 +1,11 @@
+{
+  "id": "openchat_openclaw",
+  "name": "OpenChat",
+  "description": "OpenChat channel plugin — AI agent via a /prompt bot command",
+  "channels": ["openchat"],
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {}
+  }
+}
