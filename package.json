@@ -1,6 +1,6 @@
 {
     "name": "@open-ic/openchat_openclaw",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "description": "OpenClaw OpenChat channel plugin",
     "type": "module",
     "scripts": {
